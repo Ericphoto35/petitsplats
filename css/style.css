@@ -1,0 +1,433 @@
+
+html {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+body {
+  background-color: lightgray;
+  margin: 0 auto;
+  display: flex;
+  font-family: 'Arial', sans-serif;
+}
+.mainwrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.hero {
+  width: 100%;
+  height: 667px;
+  background-image: url("../img/hero.jpg");
+  background-size: cover;
+  background-position: center -200px;
+}
+
+.logo {
+  width: 207px;
+  height: 25px;
+  margin-top: 51px;
+  margin-left: 69px;
+}
+h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  text-align: center;
+  color: #FFD15B;
+  margin-top:169px;
+}
+
+.search-container {
+  position: relative;
+  width: 59.625rem;
+  height: 4.5rem;
+  margin: 20px auto;
+}
+
+.search-input {
+  width: 100%;
+  height:100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  border-color: #666;
+  outline: none;
+}
+
+
+.search-bar {
+  width: 100%;
+  padding: 15px 45px 15px 20px;
+  border-radius: 25px;
+  border: 2px solid #e0e0e0;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  height: 42px;
+  margin-top: 40px;
+}
+
+.search-bar:focus {
+  border-color: #000;
+}
+
+.search-icon {
+  position: absolute;
+  height: 51px;
+  width: 52px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 9px;
+  top: 10px;
+  color: white;
+  pointer-events: none;
+  background-color: black;
+}
+
+.search-icon svg {
+  width: 27px;
+  height: 28px;
+}
+
+.recipies {
+  margin: 21px 7% 0 7%;
+}
+
+.recipies-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* DROPDOWN */
+
+.dropdown-container {
+  display: flex;
+  gap: 66px;
+
+}
+
+.dropdown {
+  width: 195px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8px;
+}
+
+
+.input-container {
+  position: relative;
+  margin-bottom: 8px;
+
+}
+
+.dropdown-input, .dropdown-inputAppliances , .dropdown-inputUstensiles {
+  margin-left: 5%;
+  border: 1px solid #C6C6C6;
+  height: 36px;
+}
+.cross , .crossApp , .crossUs {
+  position: absolute;
+  right: 18px;
+  bottom: 19px;
+  cursor: pointer;
+}
+
+
+
+.dropdown .input-container .fa-solid.fa-xmark.cross {
+  display: none;
+}
+
+.dropdown .input-container .fa-solid.fa-xmark.crossApp {
+  display: none;
+}
+
+.dropdown .input-container .fa-solid.fa-xmark.crossUs {
+  display: none;
+}
+
+.dropdown-button__ingredients, .dropdown-button__appliances,  .dropdown-button__ustensiles {
+  width: 100%;
+  padding: 15px;
+  height: 56px;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dropdown-icon {
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg);
+}
+
+.dropdownhidden , .dropdownApphidden , .dropdownUshidden{
+  position: absolute;
+  display: none;
+  background: white;
+  top: 40%;
+  left: 0;
+  right: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /
+}
+
+.dropdownApphidden {
+  display: none;
+}
+
+.dropdownUshidden {
+  display: none;
+}
+
+
+.recettes-counter {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* Style global */
+
+.recipies-container {
+  display: flex;
+}
+/* Container principal des recettes */
+#recipes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Carte de recette */
+.recette {
+  background-color: white;
+  overflow: hidden;
+  width: 100%;
+  max-width: 360px;
+  transition: transform 0.3s ease;
+  border-radius: 21px;
+}
+
+.recette:hover {
+  transform: translateY(-5px);
+}
+
+/* Image de la recette */
+.image__recettes {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  position: relative;
+}
+
+/* Badge de temps */
+.image__recettes::before {
+  content: attr(data-time);
+  position: absolute;
+  background-color: #FFD54F;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Contenu de la recette */
+.recette-content {
+
+}
+
+/* Titre de la recette */
+.title__recettes {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 100%;
+  margin-top: 32px;
+  margin-left: 25px;
+
+
+}
+
+/* Badge RECETTE */
+.recipe-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+/* Description de la recette */
+.description__recettes {
+  font-family: manrope, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color:#1B1B1B;
+  margin-left: 25px;
+  margin-right: 25px;
+
+}
+
+/* Section ingrédients */
+.ingredients-section {
+
+}
+
+.title__recettes--sub {
+  font-family: manrope, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #7A7A7A;
+  margin-left: 25px;
+  margin-top:29px;
+
+}
+
+/* Grille d'ingrédients */
+.ingredients__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.ingredient__item {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.ingredient__name {
+  font-family: Manrope, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: #1B1B1B;
+  margin-left: 25px;
+  margin-bottom: 5px;
+  margin-top:0;
+}
+
+.ingredient__quantity {
+  font-family: Mannrope, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #7A7A7A;
+  margin-left: 25px;
+  margin-top:0;
+
+
+}
+
+/* Badge vert (comme le P dans un cercle vert sur la première image) */
+.badge-premium {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Badges de temps */
+.time-badge {
+  position: absolute;
+  background-color: #FFD54F;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Media queries pour responsive */
+@media (max-width: 768px) {
+  .recipes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .recette {
+    max-width: 100%;
+  }
+
+  .ingredients__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.ingredient-item,
+.appliance-item,
+.ustensil-item {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Styles communs */
+#ing-selected,
+#app-selected,
+#us-selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+  height: 53px;
+}
+
+/* Style pour les ingrédients */
+.selected-ingredient , .selected-appliance ,.selected-ustensil {
+  background-color: #FFD15B;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+/* Style pour tous les boutons de suppression */
+.delete-ingredient,
+.delete-appliance,
+.delete-ustensil {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.delete-ingredient:hover,
+.delete-appliance:hover,
+.delete-ustensil:hover {
+  color: #FF4444;
+}

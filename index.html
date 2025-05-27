@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Les Petits Plats</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+<main class="mainwrapper">
+    <section class="hero">
+        <img src="img/Logo.png" alt="logo" class="logo">
+        <h1>CHERCHEZ PARMI PLUS DE 1500 RECETTES<br>
+            DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
+        <div class="search-container">
+            <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Rechercher une recette (min. 3 lettres)"
+                    class="search-input"
+            >
+            <div class="search-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </div>
+
+    </section>
+    <section class="recipies">
+        <div class="recipies-container">
+            <div class="dropdown-container">
+                <div class="dropdown dropdown-ingredients">
+                    <button class="dropdown-button__ingredients" id="ingredients-button">
+                        Ingrédients
+                        <i class="fa-solid fa-chevron-down" id="chevron-ing"></i>
+                    </button>
+                    <div class="dropdownhidden">
+                        <div class="input-container">
+                            <input type="text" class="dropdown-input" placeholder="" id="ingredientSearchInput"
+                                   aria-label="Search">
+                            <i class="fa-solid fa-xmark fa-2xs cross"></i>
+                        </div>
+                        <div id="dropdown-content__ingredients"></div>
+                    </div>
+                    <div id="ing-selected"></div>
+                </div>
+                <div class="dropdown dropdown-appliances">
+                    <button class="dropdown-button__appliances">
+                        Appareils
+                        <i class="fa-solid fa-chevron-down" id="chevron-app"></i>
+                    </button>
+                    <div class="dropdownApphidden">
+                        <div class="input-container">
+                        <input type="text" class="dropdown-inputAppliances" placeholder="" id="appliancesSearchInput"
+                               aria-label="Search">
+                            <i class="fa-solid fa-xmark fa-2xs crossApp"></i>
+                        </div>
+                        <div id="dropdown-content__appliances"></div>
+                    </div>
+                    <div id="app-selected"></div>
+                </div>
+                <div class="dropdown dropdown-ustensiles">
+                    <button class="dropdown-button__ustensiles">
+                        Ustensiles
+                        <i class="fa-solid fa-chevron-down" id="chevron-us"></i>
+                    </button>
+                    <div class="dropdownUshidden">
+                        <div class="input-container">
+                        <input type="text" class="dropdown-inputUstensiles" placeholder="" id="ustensilsSearchInput"
+                               aria-label="Search">
+                            <i class="fa-solid fa-xmark fa-2xs crossUs"></i>
+                        </div>
+                        <div id="dropdown-content__ustensils"></div>
+                    </div>
+                    <div id="us-selected"></div>
+                </div>
+            </div>
+            <div class="recipes-counter">
+                1500 recettes
+            </div>
+        </div>
+        <div id="recipes-container">
+        </div>
+        </div>
+    </section>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>
