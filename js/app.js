@@ -10,7 +10,7 @@ let selectedFilters = {
 // Fonction pour récupérer les recettes depuis le fichier JSON
 async function getRecipes() {
   try {
-    const response = await fetch('/data/recipes.json');
+    const response = await fetch('./data/recipes.json');
     const data = await response.json();
     return data.recipes;
   } catch (error) {
