@@ -83,15 +83,25 @@ function searchRecipes(recipes, searchTerm) {
 
   searchTerm = searchTerm.toLowerCase();
 
-  const results = recipes.filter(recipe => {
+  const results = [];
+
+  for (let i = 0; i < recipes.length; i++) {
+    const recipe = recipes[i];
     const nameMatch = recipe.name.toLowerCase().includes(searchTerm);
     const descriptionMatch = recipe.description.toLowerCase().includes(searchTerm);
-    const ingredientsMatch = recipe.ingredients.some(ing =>
-      ing.ingredient.toLowerCase().includes(searchTerm)
-    );
 
-    return nameMatch || descriptionMatch || ingredientsMatch;
-  });
+    let ingredientsMatch = false;
+    for (let j = 0; j < recipe.ingredients.length; j++) {
+      if (recipe.ingredients[j].ingredient.toLowerCase().includes(searchTerm)) {
+        ingredientsMatch = true;
+        break;
+      }
+    }
+
+    if (nameMatch || descriptionMatch || ingredientsMatch) {
+      results.push(recipe);
+    }
+  }
 
   console.log('Résultats de la recherche pour "' + searchTerm + '" :', results);
   console.log('Nombre de recettes trouvées :', results.length);
@@ -232,11 +242,12 @@ function displayRecipes(recipes) {
     return;
   }
 
-  recipes.forEach(recipe => {
+  for (let i = 0; i < recipes.length; i++) {
+    const recipe = recipes[i];
     const recetteModel = recettesFactory(recipe);
     const recetteElement = recetteModel.createRecettesElement();
     recipesContainer.appendChild(recetteElement);
-  });
+  }
 }
 
 // Extraire les ingrédients uniques
