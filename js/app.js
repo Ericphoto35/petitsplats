@@ -138,6 +138,7 @@ class Recettes {
     this.name = data.name;
     this.description = data.description;
     this.ingredients = data.ingredients;
+    this.time = data.time;
   }
 
   createRecettesElement() {
@@ -149,6 +150,11 @@ class Recettes {
     imageElement.src = `img/recettes/${this.image}`;
     imageElement.alt = this.name;
     imageElement.classList.add('image__recettes');
+
+    // création time
+    const timeElement = document.createElement('p');
+    timeElement.textContent =`${this.time} min`;
+    timeElement.classList.add('time__recettes');
 
     // Création  titre
     const titleElement = document.createElement('h2');
@@ -199,11 +205,13 @@ class Recettes {
 
     // Ajout des éléments à l'article
     recetteElement.appendChild(imageElement);
+    recetteElement.appendChild(timeElement);
     recetteElement.appendChild(titleElement);
     recetteElement.appendChild(titleSubElement);
     recetteElement.appendChild(paragraphElement);
     recetteElement.appendChild(titleSubElement2);
     recetteElement.appendChild(ingredientsContainer);
+
 
     return recetteElement;
   }
